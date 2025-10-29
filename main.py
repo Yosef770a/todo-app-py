@@ -38,6 +38,11 @@ def play():
                 print("Please enter a task number, the value must be a number")
 
         elif user_choice == 5:
+            get_task_index = todo.get_task_index_from_user()
+            if isinstance(get_task_index, int):
+                print(f"The task index is: {get_task_index}")
+
+        elif user_choice == 6:
             keyword = input("\nPlease enter a new description: ")
             list_found =todo.search_tasks(todo_list, keyword)
             if len(list_found):
@@ -46,7 +51,7 @@ def play():
                 print("No matching word found in the task list")
 
 
-        elif user_choice == 6:
+        elif user_choice == 7:
             try:
                 number_to_complete = int(input("\nPlease enter a task number to completed: "))
                 if todo.mark_task_as_done(todo_list, number_to_complete - 1):
@@ -57,7 +62,7 @@ def play():
             except ValueError:
                 print("Please enter a task number, the value must be a number")
 
-        elif user_choice == 7:
+        elif user_choice == 8:
             print("Goodbye!")
             break
 

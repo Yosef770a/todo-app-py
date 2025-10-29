@@ -25,12 +25,13 @@ Please select one of the following options:
     Show all tasks 2
     Delete a task 3
     Edit a task 4
-    Search for a word from the task list 5
-    Mark a task as completed 6                             
-    Exit 7
-
-    """))
-            if 1 <= input_choice <= 7:
+    Get task index 5                                 
+    Search for a word from the task list 6
+    Mark a task as completed 7                             
+    Exit 8
+                                     
+    Please enter your choice: """))
+            if 1 <= input_choice <= 8:
                 return input_choice
             else:
                 print()
@@ -56,6 +57,13 @@ def edit_task(tasks: list, index: int, new_task: str) -> bool:
         return True
     except IndexError:
         return False
+
+def get_task_index_from_user() -> int:
+    try:
+        get_from_user = int(input("Enter a task number to get its index"))
+        return get_from_user - 1
+    except ValueError:
+        print("The value must be a number")
 
 
 def search_tasks(tasks: list, keyword: str) -> list:
