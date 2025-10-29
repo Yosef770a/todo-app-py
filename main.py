@@ -27,7 +27,15 @@ def play():
                 print("Please enter a task number, the value must be a number")
 
         elif user_choice == 4:
-            print("EThis option will be added soon")
+            try:
+                number_to_edit = int(input("\nPlease enter a task number to edit: "))
+                new_description = input("\nPlease enter a new description: ")
+                if todo.edit_task(todo_list, number_to_edit - 1, new_description):
+                    print("The edit was successful")
+                else:
+                    print("Error: The task number you entered does not exist. Please select a valid task number")
+            except ValueError:
+                print("Please enter a task number, the value must be a number")
 
         elif user_choice == 5:
             print("Goodbye!")

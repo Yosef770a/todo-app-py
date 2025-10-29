@@ -51,3 +51,20 @@ def delete_task(tasks: list, index: int) -> bool:
 
 # tasks = ["yy", "hhh"]
 # print(delete_task(tasks, 3))
+
+
+
+def edit_task(tasks: list, index: int, new_task: str) -> bool:
+    try:
+        print(tasks[index])
+        tasks[index] = new_task
+        print(tasks[index])
+        return True
+    except IndexError:
+        return False
+    
+# tasks = ["yy", "hhh"]
+# print(tasks)
+
+# print(edit_task(tasks, 1, "ee"))
+# print(tasks)
